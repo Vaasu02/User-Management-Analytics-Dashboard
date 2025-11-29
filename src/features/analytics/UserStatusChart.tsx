@@ -2,7 +2,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Legend, Tooltip } from "recha
 import { Card, CardContent, CardHeader, CardTitle } from "../../components/ui/card";
 import { useUserStore } from "../../store/useUserStore";
 
-const COLORS = ["#22c55e", "#94a3b8"]; // Green for Active, Gray for Inactive
+const COLORS = ["#22c55e", "#94a3b8"];
 
 export const UserStatusChart = () => {
     const { users } = useUserStore();
@@ -10,7 +10,7 @@ export const UserStatusChart = () => {
     const activeCount = users.filter(u => u.status === 'Active').length;
     const inactiveCount = users.filter(u => u.status === 'Inactive').length;
 
-    // Use mock data if store is empty (for initial render)
+
     const data = [
         { name: "Active", value: activeCount || 35 },
         { name: "Inactive", value: inactiveCount || 15 },

@@ -38,7 +38,7 @@ export const EditUserModal = ({ isOpen, onClose, user }: EditUserModalProps) => 
         },
     });
 
-    // Reset form when user changes
+
     useEffect(() => {
         reset({
             name: user.name,
@@ -48,7 +48,7 @@ export const EditUserModal = ({ isOpen, onClose, user }: EditUserModalProps) => 
     }, [user, reset]);
 
     const onSubmit = async (data: UserFormData) => {
-        // Simulate API call
+
         await new Promise((resolve) => setTimeout(resolve, 500));
         updateUser(user.id, data);
         onClose();

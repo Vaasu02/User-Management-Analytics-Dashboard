@@ -16,7 +16,7 @@ export const UserDetailsPage = () => {
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
     const [activities, setActivities] = useState<Activity[]>([]);
 
-    // Ensure users are loaded (in case of direct link access)
+
     useEffect(() => {
         if (users.length === 0) {
             fetchUsers();
@@ -49,7 +49,7 @@ export const UserDetailsPage = () => {
             </div>
 
             <div className="grid gap-6 md:grid-cols-[1fr_2fr]">
-                {/* Profile Card */}
+
                 <Card>
                     <CardContent className="flex flex-col items-center pt-6 text-center">
                         <div className="relative mb-4">
@@ -95,7 +95,7 @@ export const UserDetailsPage = () => {
                     </CardContent>
                 </Card>
 
-                {/* Activity Section */}
+
                 <div className="flex flex-col gap-6">
                     <Card>
                         <CardHeader>

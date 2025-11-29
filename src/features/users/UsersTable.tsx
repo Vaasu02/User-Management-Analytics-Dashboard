@@ -18,7 +18,7 @@ export const UsersTable = () => {
     const { filteredUsers, pagination, isLoading, sort, setSort } = useUserStore();
     const { page, limit } = pagination;
 
-    // Client-side pagination logic applied to the filtered list
+
     const paginatedUsers = filteredUsers.slice(
         (page - 1) * limit,
         page * limit

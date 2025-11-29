@@ -41,11 +41,10 @@ export const useUserStore = create<UserStore>((set, get) => ({
 
     fetchUsers: async () => {
         set({ isLoading: true });
-        // Simulate API delay
+
         await new Promise((resolve) => setTimeout(resolve, 800));
 
-        // In a real app, we might fetch from an API. 
-        // Here we just load the mock data if it's empty, or keep existing state
+
         const currentUsers = get().users;
         const initialUsers = currentUsers.length > 0 ? currentUsers : MOCK_USERS;
 
@@ -59,7 +58,7 @@ export const useUserStore = create<UserStore>((set, get) => ({
     setFilter: (key, value) => {
         set((state) => ({
             filters: { ...state.filters, [key]: value },
-            pagination: { ...state.pagination, page: 1 } // Reset to page 1 on filter change
+            pagination: { ...state.pagination, page: 1 }
         }));
         get().applyFilters();
     },
@@ -109,12 +108,12 @@ export const useUserStore = create<UserStore>((set, get) => ({
         get().applyFilters();
     },
 
-    // Helper to apply filters locally
+
     applyFilters: () => {
         const { users, filters, sort } = get();
         let result = [...users];
 
-        // 1. Filter
+
         if (filters.search) {
             const searchLower = filters.search.toLowerCase();
             result = result.filter(
@@ -128,7 +127,7 @@ export const useUserStore = create<UserStore>((set, get) => ({
             result = result.filter((u) => u.status === filters.status);
         }
 
-        // 2. Sort
+
         if (sort.key) {
             result.sort((a, b) => {
                 const aValue = a[sort.key!];
