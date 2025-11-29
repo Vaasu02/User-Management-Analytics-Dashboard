@@ -77,7 +77,7 @@ export const EditUserModal = ({ isOpen, onClose, user }: EditUserModalProps) => 
                     <label className="text-sm font-medium">Status</label>
                     <select
                         {...register("status")}
-                        className="flex h-10 w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600"
+                        className="flex h-10 w-full rounded-md border border-gray-200 bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-600 dark:text-black"
                     >
                         <option value="Active">Active</option>
                         <option value="Inactive">Inactive</option>
